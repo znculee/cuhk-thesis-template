@@ -1,0 +1,73 @@
+%! TEX program = xelatex
+
+\documentclass[
+    paper=A4,            % paper size --> A4 is default in Germany
+    twoside=true,        % onesite or twoside printing
+    openright,           % doublepage cleaning ends up right side
+    parskip=full,        % spacing value / method for paragraphs
+    chapterprefix=true,  % prefix for chapter marks
+    12pt,                % font size
+    headings=normal,     % size of headings
+    bibliography=totoc,  % include bib in toc
+    listof=totoc,        % include listof entries in toc
+    titlepage=on,        % own page for each title page
+    captions=tableabove, % display table captions above the float env
+    draft=false,         % value for draft version
+]{scrreprt}
+
+\newcommand{\thesisTitle}{Thesis Title}
+\newcommand{\thesisName}{Author}
+\newcommand{\thesisSubject}{Documentation}
+\newcommand{\thesisDate}{May 2019}
+\newcommand{\thesisVersion}{First Draft}
+\newcommand{\thesisUniversity}{\protect{The Chinese University of Hong Kong}}
+\newcommand{\thesisUniversityDepartment}{Electronic Engineering}
+\newcommand{\thesisUniversityInstitute}{Institute for Clean Thesis Dev}
+\newcommand{\thesisUniversityGroup}{Clean Thesis Group (CTG)}
+\newcommand{\thesisUniversityCity}{Hong Kong}
+\newcommand{\thesisUniversityStreetAddress}{Rm.???, Ho Sin-hang Engineering Buidling, The Chinese University of Hong Kong, Shatin, N.T.}
+\newcommand{\thesisUniversityPostalCode}{Postal Code}
+
+\input{tex/config}
+
+\begin{document}
+
+\input{tex/titlepage}
+\input{tex/abstract}
+\input{tex/abstract_zh}
+\input{tex/acknowledgement}
+
+\setstretch{1.5}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\cleardoublepage
+
+\setcounter{tocdepth}{2}
+\pdfbookmark[0]{Contents}{Contents}
+\tableofcontents
+\cleardoublepage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{maincontentstyle}
+
+\input{tex/introduction}
+\input{tex/conclusion}
+
+\appendix
+\cleardoublepage
+\setstretch{1.5}
+\renewcommand{\bibfont}{\normalfont\small}
+\setlength{\biblabelsep}{0pt}
+\setlength{\bibitemsep}{0.5\baselineskip plus 0.5\baselineskip}
+\printbibliography%[nottype=online]
+%\printbibliography[heading=subbibliography,title={Webpages},type=online,prefixnumbers={@}]
+\cleardoublepage
+
+\end{document}
