@@ -449,19 +449,19 @@
 %
 % > formats: \chapter
 %
-\newcommand\ctformatchapter[1]{\parbox[t]{\dimexpr\textwidth-3.5em\relax}{\raggedright#1}}
+%\newcommand\ctformatchapter[1]{\parbox[t]{\dimexpr\textwidth-3.5em\relax}{\raggedright#1}}
 %
-\titleformat{\chapter}[display]%
-    {\usekomafont{chapter}}%
-    {\vspace{-5.5em}\raggedleft{%
-        {\color{ctcolorchapterline}%
-            \rule[-5pt]{2pt}{5cm}}\quad%
-        {\color{ctcolorchapternum}
-            \fontsize{60}{60}\selectfont\thechapter}%
-        }%
-    }%
-    {-2.1em}%
-    {\ctformatchapter}%
+%\titleformat{\chapter}[display]%
+    %{\usekomafont{chapter}}%
+    %{\vspace{-5.5em}\raggedleft{%
+        %{\color{ctcolorchapterline}%
+            %\rule[-5pt]{2pt}{5cm}}\quad%
+        %{\color{ctcolorchapternum}
+            %\fontsize{60}{60}\selectfont\thechapter}%
+        %}%
+    %}%
+    %{-2.1em}%
+    %{\ctformatchapter}%
 	%[\phantomsection]
 %
 % > formats: \section
